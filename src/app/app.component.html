@@ -1,32 +1,16 @@
+<nav class="navbar navbar-expand navbar-light">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav form-inline">
+      <li routerLinkActive="active"><a class="nav-link" routerLink="auth">Authentification</a></li>
+      <li routerLinkActive="active"><a class="nav-link" routerLink="appareils">Appareils</a></li>
+    </ul>
+  </div>
+</nav>
+
 <div class="container">
   <div class="row">
-    <div class="col-xs-12">
-      <h2 >Mes appareils ménagers</h2>
-      <p>
-        Mise à jour -- {{lastUpdate | async | date : dEEEEMMMMy | uppercase}}
-      </p>
-      <ul class="list-group">
-          <app-appareil 
-            *ngFor="let appareil of appareils; let i = index"
-            [indefOfAppareil]="i"
-            [appareilName]="appareil.name"
-            [appareilStatus]="appareil.status"
-          >
-          </app-appareil>
-      </ul>
-    </div>
+    <router-outlet></router-outlet>
   </div>
 </div>
-<button 
-  type="button" 
-  class="btn btn-primary" 
-  (click)="onAllumer()"
-  >
-  Tout allumer
-</button>
-<button 
-  class="btn btn-danger"
-  (click)="onTeindre()">
-  Tout éteindre
-</button>
+
 <!-- <router-outlet></router-outlet> -->
